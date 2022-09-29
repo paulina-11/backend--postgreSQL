@@ -6,6 +6,7 @@ const app = express()
 const router = require('./routes');
 
 // comunicación a traves del formato Json
+// middlewares
 app.use(express.json())
 // funcionalidad extra para imagenes o pdf y se debe poner true
 // permitimos recibir datos de codificacion de formulario

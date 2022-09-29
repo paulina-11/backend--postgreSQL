@@ -1,14 +1,18 @@
-const {Router} = require('express')
-const router = Router()
+const { Router } = require("express");
+const router = Router();
+const {
+  crearMascota,
+  obtenerTodasMascotas,
+  obtenerMascota,
+  modificarMascota,
+  eliminarMascota,
+} = require("../controllers");
 
-// Esperar una respuesta
-// primer parametro es el url
-// segundo parametro funcion
-// req metadata, informacion del get
-// params y query
-router.get ('/users',function (req,res){
-    console.log(req.body);
-    res.json({message:'Hola soy la respuesta'})
-})
+// CRUD de mascotas
+router.post("/mascotas", crearMascota);
+router.get("/mascotas", obtenerTodasMascotas);
+router.get("/mascotas/:idMascota", obtenerMascota);
+router.put("/mascotas/:idMascota", modificarMascota);
+router.delete("/mascotas/:idMascota", eliminarMascota);
 
-module.exports = router
+module.exports = router;
